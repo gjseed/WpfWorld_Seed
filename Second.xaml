@@ -40,6 +40,9 @@
                                 <DoubleAnimation From="450" To="500" Duration="00:00:5" 
                          Storyboard.TargetName="Gravity" 
                          Storyboard.TargetProperty="(Canvas.Bottom)">
+                                    <DoubleAnimation.EasingFunction>
+                                        <PowerEase Power="2" EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
                                 </DoubleAnimation>
                             </Storyboard>
                         </Storyboard>
