@@ -9,7 +9,7 @@
       Title="Second">
 
     <Canvas>
-        <TextBlock Name="Gravity" Width="200" Height="50" FontSize="20" Text="Gravity" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" TextAlignment="Center" LineHeight="20">
+        <TextBlock Name="Gravity" Width="200" Height="50" FontSize="20" Text="Gravity" FontWeight="Bold" TextAlignment="Center" LineHeight="20" Canvas.Left="400" Canvas.Top="10">
             <TextBlock.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="#FF04C1F9"/>
@@ -23,26 +23,15 @@
                             <Storyboard x:Name="myStoryboard">
                                 <DoubleAnimation From="0" To="400" Duration="00:00:5" 
                          Storyboard.TargetName="Gravity" 
-                         Storyboard.TargetProperty="(Canvas.Left)">
-                                    <DoubleAnimation.EasingFunction>
-                                        <BounceEase Bounces="5" EasingMode="EaseOut" 
-                                 Bounciness="1.5" />
-                                    </DoubleAnimation.EasingFunction>
-                                </DoubleAnimation>
-                                <DoubleAnimation From="0" To="400" Duration="00:00:5" 
-                         Storyboard.TargetName="Gravity" 
                          Storyboard.TargetProperty="(Canvas.Top)">
                                     <DoubleAnimation.EasingFunction>
                                         <BounceEase Bounces="5" EasingMode="EaseOut" 
                                  Bounciness="1.5" />
                                     </DoubleAnimation.EasingFunction>
                                 </DoubleAnimation>
-                                <DoubleAnimation From="450" To="500" Duration="00:00:5" 
+                                <DoubleAnimation From="400" To="500" Duration="00:00:2" 
                          Storyboard.TargetName="Gravity" 
-                         Storyboard.TargetProperty="(Canvas.Bottom)">
-                                    <DoubleAnimation.EasingFunction>
-                                        <PowerEase Power="2" EasingMode="EaseOut"/>
-                                    </DoubleAnimation.EasingFunction>
+                         Storyboard.TargetProperty="(Canvas.Top)" BeginTime="00:00:6">
                                 </DoubleAnimation>
                             </Storyboard>
                         </Storyboard>
