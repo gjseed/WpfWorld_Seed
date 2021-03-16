@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfWorld_Seed"
-      mc:Ignorable="d" 
+      mc:Ignorable="d" Loaded="Page_Loaded"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Third">
     <Page.Resources>
@@ -83,17 +83,25 @@
                 <EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="14"/>
                 <EasingDoubleKeyFrame KeyTime="00:00:04" Value="25"/>
                 <EasingDoubleKeyFrame KeyTime="00:00:04.5000000" Value="32"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:05" Value="16"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:05" Value="18"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="exPoint" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
                 <EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="80"/>
                 <EasingDoubleKeyFrame KeyTime="00:00:04" Value="133"/>
                 <EasingDoubleKeyFrame KeyTime="00:00:04.5000000" Value="184"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:05" Value="230"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:05" Value="216"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="exPoint" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:04.5000000" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:05" Value="1.533"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Page.Resources>
-
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard}"/>
+        </EventTrigger>
+    </Page.Triggers>
     <Grid>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="5,0,0,0" Text="Hello" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5" Background="White" Foreground="Black">
             <TextBox.RenderTransform>
@@ -125,7 +133,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Label x:Name="exPoint" Content="!" HorizontalAlignment="Center" Margin="0,-50,0,0" VerticalAlignment="Top" Background="#00000000" RenderTransformOrigin="0.5,0.5" Foreground="#FF792087">
+        <Label x:Name="exPoint" Content="!" HorizontalAlignment="Center" Margin="0,-50,0,0" VerticalAlignment="Top" Background="#00000000" RenderTransformOrigin="0.5,0.5" Foreground="#FF792087" Height="40" Width="30" FontSize="28">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
